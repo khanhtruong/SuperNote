@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 fun getDateTimeFormat(calendar: Calendar): String {
-    val simpleDateFormat = SimpleDateFormat("dd, MMM yyyy hh:mm", Locale.getDefault())
+    val simpleDateFormat = SimpleDateFormat("dd, MMM yyyy HH:mm", Locale.getDefault())
     return simpleDateFormat.format(calendar.time)
 }
 
@@ -68,19 +68,19 @@ fun isDayBetween(startDay: Int, endDay: Int, dayCompare: Int): Boolean {
 fun getTimeString(timeInMillis: Long): String {
     val calendar = Calendar.getInstance(Locale.getDefault())
     calendar.timeInMillis = timeInMillis
-    val simpleDateFormat = SimpleDateFormat("hh:mm", Locale.getDefault())
+    val simpleDateFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
     return simpleDateFormat.format(calendar.time)
 }
 
 fun getDateTimeString(timeInMillis: Long): String {
     val calendar = Calendar.getInstance(Locale.getDefault())
     calendar.timeInMillis = timeInMillis
-    val simpleDateFormat = SimpleDateFormat("dd, MMM yyyy hh:mm", Locale.getDefault())
+    val simpleDateFormat = SimpleDateFormat("dd, MMM yyyy HH:mm", Locale.getDefault())
     return  simpleDateFormat.format(calendar.time)
 }
 
-fun getTimeString2(calendar: Calendar): String {
-    val simpleDateFormat = SimpleDateFormat("hh:mm", Locale.getDefault())
+fun getTimeFormat(calendar: Calendar): String {
+    val simpleDateFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
     return simpleDateFormat.format(calendar.time)
 }
 
@@ -88,5 +88,12 @@ fun getDateString(dateTime: Long): String {
     val calendar = Calendar.getInstance(Locale.getDefault())
     calendar.timeInMillis = dateTime
     val simpleDateFormat = SimpleDateFormat("dd/mm/yyyy", Locale.getDefault())
+    return simpleDateFormat.format(calendar.time)
+}
+
+fun getDayMonthFormat(dateTime: Long): String {
+    val calendar = Calendar.getInstance(Locale.getDefault())
+    calendar.timeInMillis = dateTime
+    val simpleDateFormat = SimpleDateFormat("dd, MMM", Locale.getDefault())
     return simpleDateFormat.format(calendar.time)
 }
